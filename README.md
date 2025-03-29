@@ -18,6 +18,7 @@ Backend: React.js
 🔧 Installation & Setup
 1️⃣ Clone the Repository:
 git clone https://github.com/your-repo/book-explorer.git
+
 cd book-explorer
 
 2️⃣ Install Dependencies:
