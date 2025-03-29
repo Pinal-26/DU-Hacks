@@ -1,0 +1,838 @@
+/* General styling */
+.description-box {
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* Spooky Background Effect */
+.spooky-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(101, 99, 99, 0.8) 10%, black 90%);
+    animation: ghostMove 3s linear infinite;
+}
+
+@keyframes ghostMove {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Romantic-Themed Effect */
+.romantic {
+    background-color: pink;
+    color: red;
+    position: relative;
+}
+
+/* Floating Hearts Effect */
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.floating-hearts::after {
+    content: "❤ ❤ ❤";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 24px;
+    animation: floatHearts 3s linear infinite;
+}
+
+/* Default Dialog Box (For All Books Except Horror & Romantic) */
+.dialog-box {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;  /* Width smaller than height */
+    height: 500px; /* Height larger */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Romantic-Themed Dialog Box */
+.dialog-box.romantic {
+    background: url('https://i.pinimg.com/736x/83/94/ce/8394ce77ac84324cc7d73c598e7b7d3b.jpg') no-repeat center center;
+    color: red;
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Ensures text color visibility */
+.dialog-box.romantic h2,
+.dialog-box.romantic p {
+    color: red;
+}
+
+/* Romantic Close Button */
+.dialog-box.romantic.close {
+    color: darkred;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dialog-box.fiction {
+    background: url('https://png.pngtree.com/background/20210714/original/pngtree-cool-science-fiction-background-material-picture-image_1214579.jpg') no-repeat center center;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Ensures text color visibility */
+.dialog-box.fiction h2,
+.dialog-box.fiction p {
+    color: rgb(0, 0, 0);
+}
+
+/* Romantic Close Button */
+.dialog-box.fiction.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dialog-box.historical {
+    position: relative;
+    background: url('https://wallpapers.com/images/hd/historical-background-2v92o7a0hnb5onwn.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.historical::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.historical h2,
+.dialog-box.historical p,
+.dialog-box.historical .close {
+    position: relative;
+    z-index: 2;
+    color: black; /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.historical .close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dialog-box.autobiography {
+    position: relative;
+    background: url('https://wallpapercrafter.com/desktop/439767-Man-Made-Statue-Phone-Wallpaper.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.autobiography::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 70% opacity */
+    z-index: 0;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.autobiography h2,
+.dialog-box.autobiography p,
+.dialog-box.autobiography .close {
+    position: relative;
+    z-index: 2;
+    color: black; /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.autobiography .close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dialog-box.motivational {
+    position: relative;
+    background: url('https://marketplace.canva.com/EAE-sPuIfWY/1/0/900w/canva-black-and-yellow-simple-grainy-textured-sand-watch-motivational-quote-about-time-phone-wallpaper-aOp3bK8P_GU.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.motivational::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.motivational h2,
+.dialog-box.motivational p,
+.dialog-box.motivational .close {
+    position: relative;
+    z-index: 2;
+    color: black; /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.motivational .close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dialog-box.business {
+    position: relative;
+    background: url('https://c8.alamy.com/comp/TC1F1N/vertical-panorama-banner-financial-growth-graph-sales-increase-marketing-strategy-concept-TC1F1N.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.business::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.business h2,
+.dialog-box.business p,
+.dialog-box.business.close {
+    position: relative;
+    z-index: 2;
+    color: black; /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.business .close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.mythology {
+    position: relative;
+    background: url('https://wallpapercave.com/wp/wp13202637.png') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.mythology::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.mythology h2,
+.dialog-box.mythology p,
+.dialog-box.mythology.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.mythology.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.adventure {
+    position: relative;
+    background: url('https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/38522/Adventure-is-out-there-iphone-x-wallpaper-ilikewallpaper_com.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.adventure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.adventure h2,
+.dialog-box.adventure p,
+.dialog-box.adventure.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.adventure.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.thriller {
+    position: relative;
+    background: url('https://img1.wallspic.com/previews/2/5/4/2/7/172452/172452-alien_outpost-joe_reegan-science_fiction-ifc_films-thriller-500x.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.thriller::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.thriller h2,
+.dialog-box.thriller p,
+.dialog-box.thriller.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.thriller.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.philosophy {
+    position: relative;
+    background: url('https://wallpapers.com/images/hd/metamorphosis-of-existence-jpg-hti4idjeh9kozivb.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.philosophy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.philosophy h2,
+.dialog-box.philosophy p,
+.dialog-box.philosophy.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.philosophy.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.poetry {
+    position: relative;
+    background: url('https://counseling.northwestern.edu/wp-content/uploads/sites/83/2021/03/Shakespeare.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.poetry::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.poetry h2,
+.dialog-box.poetry p,
+.dialog-box.poetry.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.poetry.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.short-stories {
+    position: relative;
+    background: url('https://i.pinimg.com/736x/a4/9f/2c/a49f2c1f11e583b42d413dd02169c33b.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.short-stories::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.short-stories h2,
+.dialog-box.short-stories p,
+.dialog-box.short-stories.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.short-stories.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.satire{
+    position: relative;
+    background: url('https://w0.peakpx.com/wallpaper/450/289/HD-wallpaper-barcode-robot-arts-culture-banksy-artwork-banksy-graffiti-dimdom-art-street-art-meaning-art-political-art-style-beautiful-color-murals-artwork-satirical-street-art-thumbnail.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.satire::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.satire h2,
+.dialog-box.satire p,
+.dialog-box.satire.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.satire.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.coming-of-age{
+    position: relative;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePvW-Mbkyls2hvtRq8BEOxNJtGljxufUTLQ&s') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.coming-of-age::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.coming-of-age h2,
+.dialog-box.coming-of-age p,
+.dialog-box.coming-of-age.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.coming-of-age.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.dystopian{
+    position: relative;
+    background: url('https://mfiles.alphacoders.com/774/774003.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.dystopian::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.dystopian h2,
+.dialog-box.dystopian p,
+.dialog-box.dystopian.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.dystopian.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.dystopian{
+    position: relative;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-x16br-qvqmBQ1Mpbyw-f5IcjCn8nYWuhdlB6p5IrTL4sV4GDMh0DxRzpMTcyCHPf3Nw&usqp=CAU') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.dystopian::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.dystopian h2,
+.dialog-box.dystopian p,
+.dialog-box.dystopian.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.dystopian.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.dialog-box.tragedy{
+    position: relative;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPzZpbJP7Zx6bL75jGkY61gJbEgCWIsAlXtFpCNlR_jBERUywWaUyD_beK88kye_EKwo0&usqp=CAU') no-repeat center center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.tragedy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* White overlay with 70% opacity */
+    z-index: 1;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.tragedy h2,
+.dialog-box.tragedy p,
+.dialog-box.tragedy.close {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Ensuring text color is visible */
+}
+
+/* Historical-Themed Close Button */
+.dialog-box.tragedy.close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+.dialog-box.horror {
+    position: relative;
+    background: url('https://i.pinimg.com/736x/78/95/df/7895df2ac5469a206c71b9c810b60b32.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(180, 172, 176);
+    width: 350px;
+    height: 500px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay to reduce background image opacity */
+.dialog-box.horror::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(224, 220, 220, 0.5); /* White overlay with 50% opacity */
+    z-index: -2;
+}
+
+/* Ensures text is above the overlay */
+.dialog-box.horror h2,
+.dialog-box.horror p,
+.dialog-box.horror .close {
+    position: relative;
+    z-index: 2;
+    color: black; /* Ensuring text color is visible */
+}
+
+/* Horror-Themed Close Button */
+.dialog-box.horror .close {
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:bold;
+}
+
+/* Modal Styles */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Book Cover */
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}

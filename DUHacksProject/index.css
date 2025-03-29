@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(228, 234, 246);
+  color: black;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .card {
+  background: #333;
+  color: white;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.dark-mode .toggle-btn {
+  color: white;
+}
+
+/* Controls */
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Book Cards */
+.card {
+  background: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(39, 27, 203, 0.1);
+  text-align: left;
+  position: relative;
+}
+
+.card h3 {
+  color: #1202f1;
+  font-weight: bold;
+}
+
+.card p {
+  color: #87877e;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+/* Rating Section */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Bookmark Button */
+.card button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Add Book Form */
+.hidden {
+  display: none;
+}
+
+#addBookForm {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 5px;
+}
+
+#addBookForm input {
+  display: block;
+  margin: 5px auto;
+  width: 80%;
+}
+

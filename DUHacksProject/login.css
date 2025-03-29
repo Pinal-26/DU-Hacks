@@ -1,0 +1,50 @@
+/* Login.css */
+
+
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReozfzrxDcYAP_yv3KOEc0WDzX7j5tuY39jg&s');
+    background-size: cover; /* This will ensure the image covers the entire background */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+}
+.container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background for contrast */
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for inputs */
+  }
+  
+  .error-message {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    background: #ffebee; /* Light red background for error */
+    border: 1px solid red;
+    border-radius: 10px;
+    color: red; /* Text color for visibility */
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #4caf50; /* Green background for the button */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
